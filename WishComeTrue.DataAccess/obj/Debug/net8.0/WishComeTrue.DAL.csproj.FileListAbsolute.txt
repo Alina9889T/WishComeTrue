@@ -1,0 +1,17 @@
+C:\Practicum\C#\ASP .NET\WishComeTrue\WishComeTrue.DataAccess\bin\Debug\net8.0\WishComeTrue.DAL.deps.json
+C:\Practicum\C#\ASP .NET\WishComeTrue\WishComeTrue.DataAccess\bin\Debug\net8.0\WishComeTrue.DAL.runtimeconfig.json
+C:\Practicum\C#\ASP .NET\WishComeTrue\WishComeTrue.DataAccess\bin\Debug\net8.0\WishComeTrue.DAL.dll
+C:\Practicum\C#\ASP .NET\WishComeTrue\WishComeTrue.DataAccess\bin\Debug\net8.0\WishComeTrue.DAL.pdb
+C:\Practicum\C#\ASP .NET\WishComeTrue\WishComeTrue.DataAccess\bin\Debug\net8.0\WishComeTrue.Common.dll
+C:\Practicum\C#\ASP .NET\WishComeTrue\WishComeTrue.DataAccess\bin\Debug\net8.0\WishComeTrue.Common.pdb
+C:\Practicum\C#\ASP .NET\WishComeTrue\WishComeTrue.DataAccess\obj\Debug\net8.0\WishComeTrue.DAL.csproj.AssemblyReference.cache
+C:\Practicum\C#\ASP .NET\WishComeTrue\WishComeTrue.DataAccess\obj\Debug\net8.0\WishComeTrue.DAL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Practicum\C#\ASP .NET\WishComeTrue\WishComeTrue.DataAccess\obj\Debug\net8.0\WishComeTrue.DAL.AssemblyInfoInputs.cache
+C:\Practicum\C#\ASP .NET\WishComeTrue\WishComeTrue.DataAccess\obj\Debug\net8.0\WishComeTrue.DAL.AssemblyInfo.cs
+C:\Practicum\C#\ASP .NET\WishComeTrue\WishComeTrue.DataAccess\obj\Debug\net8.0\WishComeTrue.DAL.csproj.CoreCompileInputs.cache
+C:\Practicum\C#\ASP .NET\WishComeTrue\WishComeTrue.DataAccess\obj\Debug\net8.0\WishCome.3FEC4645.Up2Date
+C:\Practicum\C#\ASP .NET\WishComeTrue\WishComeTrue.DataAccess\obj\Debug\net8.0\WishComeTrue.DAL.dll
+C:\Practicum\C#\ASP .NET\WishComeTrue\WishComeTrue.DataAccess\obj\Debug\net8.0\refint\WishComeTrue.DAL.dll
+C:\Practicum\C#\ASP .NET\WishComeTrue\WishComeTrue.DataAccess\obj\Debug\net8.0\WishComeTrue.DAL.pdb
+C:\Practicum\C#\ASP .NET\WishComeTrue\WishComeTrue.DataAccess\obj\Debug\net8.0\WishComeTrue.DAL.genruntimeconfig.cache
+C:\Practicum\C#\ASP .NET\WishComeTrue\WishComeTrue.DataAccess\obj\Debug\net8.0\ref\WishComeTrue.DAL.dll

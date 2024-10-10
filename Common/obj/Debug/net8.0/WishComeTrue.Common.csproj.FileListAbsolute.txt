@@ -1,0 +1,11 @@
+C:\Practicum\C#\ASP .NET\WishComeTrue\Common\bin\Debug\net8.0\WishComeTrue.Common.deps.json
+C:\Practicum\C#\ASP .NET\WishComeTrue\Common\bin\Debug\net8.0\WishComeTrue.Common.dll
+C:\Practicum\C#\ASP .NET\WishComeTrue\Common\bin\Debug\net8.0\WishComeTrue.Common.pdb
+C:\Practicum\C#\ASP .NET\WishComeTrue\Common\obj\Debug\net8.0\WishComeTrue.Common.GeneratedMSBuildEditorConfig.editorconfig
+C:\Practicum\C#\ASP .NET\WishComeTrue\Common\obj\Debug\net8.0\WishComeTrue.Common.AssemblyInfoInputs.cache
+C:\Practicum\C#\ASP .NET\WishComeTrue\Common\obj\Debug\net8.0\WishComeTrue.Common.AssemblyInfo.cs
+C:\Practicum\C#\ASP .NET\WishComeTrue\Common\obj\Debug\net8.0\WishComeTrue.Common.csproj.CoreCompileInputs.cache
+C:\Practicum\C#\ASP .NET\WishComeTrue\Common\obj\Debug\net8.0\WishComeTrue.Common.dll
+C:\Practicum\C#\ASP .NET\WishComeTrue\Common\obj\Debug\net8.0\refint\WishComeTrue.Common.dll
+C:\Practicum\C#\ASP .NET\WishComeTrue\Common\obj\Debug\net8.0\WishComeTrue.Common.pdb
+C:\Practicum\C#\ASP .NET\WishComeTrue\Common\obj\Debug\net8.0\ref\WishComeTrue.Common.dll

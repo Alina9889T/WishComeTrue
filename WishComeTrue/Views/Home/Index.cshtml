@@ -1,0 +1,70 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h3 class="display-5">Let your wishes come true!</h3>
+    <table class="table">
+        <thead>
+            <tr>
+                <th><a href="/Wishes">Create new wish</a></th>
+                <th><a href="/WishLists">Create new wish list</a></th>
+            </tr>
+        </thead>
+    </table>
+</div>
+
+<br />
+<br />
+<h6 class="mb-3 text-muted">Recently created wishes</h6>
+<table class="table table-hover" id="recentWishesTableId">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Link</th>
+            <th>Created</th>
+            <th>FulFilled</th>
+        </tr>
+    </thead>
+    <tbody>
+    </tbody>
+</table>
+
+
+
+@section Scripts {
+    <script src="https://cdn.datatables.net/2.1.7/js/dataTables.js"></script>
+    <script>
+        let recentWishesTable = $('#recentWishesTableId').DataTable({
+            info: true,
+            serverSide: false,
+            searching: false,
+            paging: false,
+            sorting: false,
+
+            ajax: {
+                url: "@Url.Action("RecentWishesHandler")",
+                method: 'POST',
+                data: null
+            },
+
+            columns: [
+                { data: 'name'},
+                { data: 'description' },
+                { data: 'link' },
+                { data: 'created' },
+                { data: 'fulFilled' },
+            ],
+
+            // createdRow: function(nRow, data) {
+            //     for (var i = 0; i < dataTable.columns().header().length - 1; i++) {
+            //         $('td', nRow).eq(i).css('cursor', 'pointer');
+
+            //         $('td', nRow).eq(i).on('click', null);
+            //     }
+            //     $('td button', nRow).eq(i).on('click', null);
+            // }
+        });
+    </script>
+}

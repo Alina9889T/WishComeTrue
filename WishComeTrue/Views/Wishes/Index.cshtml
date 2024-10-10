@@ -1,0 +1,281 @@
+﻿@{
+    ViewData["Title"] = "Wishes Page";
+}
+<style>
+    .wishes-container {
+        display: flex;
+        flex-direction: row;
+        height: 100%;
+    }
+
+    .table-panel {
+        flex-grow: 3;
+    }
+
+    .info-panel {
+        margin-left: 15px;
+        min-width: 300px;
+        flex-grow: 1;
+        padding: 5px;
+        background-color: lightgray;
+    }
+
+    .info-panel-inner {
+        width: 100%;
+        visibility: hidden;
+    }
+
+    .info-panel-couple {
+        margin: 10px 0 10px 0;
+    }
+
+    .info-panel-label {
+        color: green;
+        font-size: 12px;
+    }
+
+    .info-panel-value {
+        font-size: 12px;
+    }
+
+    .button-panel {
+        margin: 5px 0 5px 0;
+        text-align: right;
+    }
+
+    .button-width-100 {
+        width: 100px;
+    }
+
+    .selected {
+        background-color: #d6e8d5;
+    }
+
+</style>
+<div class="wishes-container">
+    <div class="table-panel">
+        <h6 class="mb-3 text-muted">Active wishes</h6>
+        <div class="border-bottom">
+            <table class="table table-hover" id="activeWishesTableId">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Description</th>
+                        <th>Created</th>
+                        <th>FulFilled</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+        <br />
+        <div class="button-panel">
+            <button type="button" class="btn btn-success btn-sm">Create new wish</button>
+        </div>
+        <br />
+        <br />
+        <br />
+        <h6 class="mb-3 text-muted">FulFilled wishes</h6>
+        <div>
+            <table class="table table-hover" id="fulFilledWishesTableId">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Description</th>
+                        <th>Created</th>
+                        <th>FulFilled</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+       @*  <br />
+        <br />
+        <br />
+        <h6 class="mb-3 text-muted">Test table</h6>
+        <div>
+            <table class="table table-hover" id="testTableId">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Description</th>
+                        <th>Created</th>
+                        <th>FulFilled</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th>Name1</th>
+                        <th>Description1</th>
+                        <th>Created1</th>
+                        <th>FulFilled1</th>
+                    </tr>
+                    <tr>
+                        <th>Name2</th>
+                        <th>Description2</th>
+                        <th>Created2</th>
+                        <th>FulFilled2</th>
+                    </tr>
+                </tbody>
+            </table>
+        </div> *@
+    </div>
+    <div class="info-panel border">
+        <h6 class="mb-3 text-muted">Info panel</h6>
+        <div id="infoPanelNote">Select a wish from the tables on the left</div>
+        <div class="info-panel-inner" id="infoPanelInner">
+            <div class="info-panel-couple">
+                <div class="info-panel-label">Wish Name</div>
+                <div id="wishName"></div>
+            </div>
+            <div class="info-panel-couple">
+                <div class="info-panel-label">Wish Description</div>
+                <div id="wishDescription"></div>
+            </div>
+            <div class="info-panel-couple">
+                <div class="info-panel-label">Link</div>
+                <a id="wishLink" href="" target="_blank"></a>
+            </div>
+            <div class="info-panel-couple">
+                <div class="info-panel-label">Date of Creation</div>
+                <div id="wishCreated"></div>
+            </div>
+            <div class="info-panel-couple">
+                <div class="info-panel-label">Is Fullfilled?</div>
+                <div id="wishFulFilled"></div>
+            </div>
+            <div class="button-panel">
+                <button type="button" class="btn btn-success btn-sm button-width-100">Edit wish</button>
+            </div>
+            <div class="button-panel">
+                <button type="button" class="btn btn-danger btn-sm button-width-100">Delete wish</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="https://cdn.datatables.net/2.1.7/js/dataTables.js"></script>
+    <script>
+        let activeWishesTable = $('#activeWishesTableId').DataTable({
+            info: true,
+            serverSide: false,
+            searching: false,
+            paging: false,
+            sorting: false,
+            select: {
+                style: 'single'
+            },
+
+            ajax: {
+                url: "@Url.Action("ActiveWishesHandler")",
+                method: 'POST',
+                data: null
+            },
+
+            columns: [
+                { data: 'name'},
+                { data: 'description' },
+                { data: 'created' },
+                { data: 'fulFilled' },
+            ],
+
+            createdRow: function(nRow, data) {
+                for (var i = 0; i < activeWishesTable.columns().header().length; i++) {
+                    $('td', nRow).eq(i).css('cursor', 'pointer');
+
+                    $('td', nRow).eq(i).on('click', function (e) {
+                        $('#wishName').text(data.name);
+                        $('#wishDescription').text(data.description);
+                        $('#wishLink').text(data.link);
+                        $('#wishLink').attr("href", data.link)
+                        $('#wishCreated').text(data.created);
+                        $('#wishFulFilled').text(data.fulFilled);
+                    });
+                }
+            }
+        });
+
+        activeWishesTable.on('click', 'tbody tr', tableClick);
+
+        let fulFilledWishesTable = $('#fulFilledWishesTableId').DataTable({
+            info: true,
+            serverSide: false,
+            searching: false,
+            paging: false,
+            sorting: false,
+
+            ajax: {
+                url: "@Url.Action("FulFilledWishesHandler")",
+                method: 'POST',
+                data: null
+            },
+
+            columns: [
+                { data: 'name' },
+                { data: 'description' },
+                { data: 'created' },
+                { data: 'fulFilled' },
+            ],
+
+            createdRow: function (nRow, data) {
+                for (var i = 0; i < fulFilledWishesTable.columns().header().length; i++) {
+                    $('td', nRow).eq(i).css('cursor', 'pointer');
+
+                    $('td', nRow).eq(i).on('click', function (e) {
+                        $('#wishName').text(data.name);
+                        $('#wishDescription').text(data.description);
+                        $('#wishLink').text(data.link);
+                        $('#wishCreated').text(data.created);
+                        $('#wishFulFilled').text(data.fulFilled);
+                    });
+                }
+            }
+        });
+
+        fulFilledWishesTable.on('click', 'tbody tr', tableClick);
+
+        function tableClick(e) {
+            let classList = e.currentTarget.classList;
+
+            if (classList.contains('selected')) {
+                classList.remove('selected');
+                $('#infoPanelInner').css('visibility', 'hidden');
+                $('#infoPanelNote').css('display', 'block');
+            }
+            else {
+                activeWishesTable.rows('.selected').nodes().each((row) => row.classList.remove('selected'));
+                fulFilledWishesTable.rows('.selected').nodes().each((row) => row.classList.remove('selected'));
+                classList.add('selected');
+                $('#infoPanelInner').css('visibility', 'visible');
+                $('#infoPanelNote').css('display', 'none');
+            }
+        }
+    </script>
+
+@*     <script>
+        let testTable = $('#testTableId').DataTable({
+            info: true,
+            serverSide: false,
+            searching: false,
+            paging: false,
+            sorting: false,
+            Selection: true,
+        });
+
+        testTable.on('click', 'tbody tr', (e) => {
+            let classList = e.currentTarget.classList;
+
+            if (classList.contains('selected')) {
+                classList.remove('selected');
+            }
+            else {
+                testTable.rows('.selected').nodes().each((row) => row.classList.remove('selected'));
+                classList.add('selected');
+            }
+        });
+    </script> *@
+}
+
