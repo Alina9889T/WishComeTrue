@@ -15,6 +15,11 @@ namespace WishComeTrue.Controllers
             return View();
         }
 
+        public IActionResult Create()
+        {
+            return View();
+        }
+
         public async Task<IActionResult> ActiveWishesHandler()
         {
             var response = await _wishService.GetWishes(onlyActive: true);

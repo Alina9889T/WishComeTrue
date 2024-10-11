@@ -418,3 +418,5 @@ C:\Practicum\C#\ASP .NET\WishComeTrue\WishComeTrue\bin\Debug\net8.0\WishComeTrue
 C:\Practicum\C#\ASP .NET\WishComeTrue\WishComeTrue\bin\Debug\net8.0\WishComeTrue.Service.pdb
 C:\Practicum\C#\ASP .NET\WishComeTrue\WishComeTrue\bin\Debug\net8.0\WishComeTrue.DAL.dll
 C:\Practicum\C#\ASP .NET\WishComeTrue\WishComeTrue\bin\Debug\net8.0\WishComeTrue.DAL.pdb
+C:\Practicum\C#\ASP .NET\WishComeTrue\WishComeTrue\obj\Debug\net8.0\WishComeTrue.sourcelink.json
+C:\Practicum\C#\ASP .NET\WishComeTrue\WishComeTrue\bin\Debug\net8.0\libman.json

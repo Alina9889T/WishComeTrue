@@ -17,3 +17,4 @@ C:\Practicum\C#\ASP .NET\WishComeTrue\WishComeTrue.Service\obj\Debug\net8.0\Wish
 C:\Practicum\C#\ASP .NET\WishComeTrue\WishComeTrue.Service\obj\Debug\net8.0\ref\WishComeTrue.Service.dll
 C:\Practicum\C#\ASP .NET\WishComeTrue\WishComeTrue.Service\bin\Debug\net8.0\WishComeTrue.DAL.dll
 C:\Practicum\C#\ASP .NET\WishComeTrue\WishComeTrue.Service\bin\Debug\net8.0\WishComeTrue.DAL.pdb
+C:\Practicum\C#\ASP .NET\WishComeTrue\WishComeTrue.Service\obj\Debug\net8.0\WishComeTrue.Service.sourcelink.json

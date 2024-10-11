@@ -13,29 +13,18 @@
     }
 
     .info-panel {
-        margin-left: 15px;
-        min-width: 300px;
+        width: 350px;
         flex-grow: 1;
         padding: 5px;
-        background-color: lightgray;
+        /* background-color: lightgray; */
     }
 
     .info-panel-inner {
-        width: 100%;
-        visibility: hidden;
+        /* visibility: hidden; */
     }
 
-    .info-panel-couple {
-        margin: 10px 0 10px 0;
-    }
-
-    .info-panel-label {
-        color: green;
-        font-size: 12px;
-    }
-
-    .info-panel-value {
-        font-size: 12px;
+    .list-group-item {
+        background-color: transparent;
     }
 
     .button-panel {
@@ -52,10 +41,10 @@
     }
 
 </style>
-<div class="wishes-container">
+<div class="wishes-container mt-4">
     <div class="table-panel">
         <h6 class="mb-3 text-muted">Active wishes</h6>
-        <div class="border-bottom">
+        <div>
             <table class="table table-hover" id="activeWishesTableId">
                 <thead>
                     <tr>
@@ -71,7 +60,7 @@
         </div>
         <br />
         <div class="button-panel">
-            <button type="button" class="btn btn-success btn-sm">Create new wish</button>
+            <a type="button" class="btn btn-success btn-sm" asp-area="" asp-controller="Wishes" asp-action="Create">Create new wish</a>
         </div>
         <br />
         <br />
@@ -122,35 +111,61 @@
             </table>
         </div> *@
     </div>
-    <div class="info-panel border">
-        <h6 class="mb-3 text-muted">Info panel</h6>
-        <div id="infoPanelNote">Select a wish from the tables on the left</div>
-        <div class="info-panel-inner" id="infoPanelInner">
-            <div class="info-panel-couple">
-                <div class="info-panel-label">Wish Name</div>
-                <div id="wishName"></div>
-            </div>
-            <div class="info-panel-couple">
-                <div class="info-panel-label">Wish Description</div>
-                <div id="wishDescription"></div>
-            </div>
-            <div class="info-panel-couple">
-                <div class="info-panel-label">Link</div>
-                <a id="wishLink" href="" target="_blank"></a>
-            </div>
-            <div class="info-panel-couple">
-                <div class="info-panel-label">Date of Creation</div>
-                <div id="wishCreated"></div>
-            </div>
-            <div class="info-panel-couple">
-                <div class="info-panel-label">Is Fullfilled?</div>
-                <div id="wishFulFilled"></div>
-            </div>
-            <div class="button-panel">
-                <button type="button" class="btn btn-success btn-sm button-width-100">Edit wish</button>
-            </div>
-            <div class="button-panel">
-                <button type="button" class="btn btn-danger btn-sm button-width-100">Delete wish</button>
+    
+    <div class="offcanvas offcanvas-end bg-custom-gradient" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasRightLabel"><i class="bi bi-info-square"> </i>Info Panel</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <div class="info-panel border">
+                @* <div class="col-10 mb-1 p-3 small" id="infoPanelNote">Select a wish from the tables on the left</div> *@
+                <div class="info-panel-inner" id="infoPanelInner">
+                    <div class="list-group list-group-flush border-bottom scrollarea">
+                        <div class="list-group-item py-3 lh-tight" aria-current="true">
+                            <div class="d-flex w-100 align-items-center justify-content-between">
+                                <strong class="mb-1">Name</strong>
+                                <i class="bi bi-chat-left-dots"></i>
+                            </div>
+                            <div class="col-10 mb-1 small" id="wishName"></div>
+                        </div>
+                        <div class="list-group-item py-3 lh-tight" aria-current="true">
+                            <div class="d-flex w-100 align-items-center justify-content-between">
+                                <strong class="mb-1">Description</strong>
+                                <i class="bi bi-chat-left-text"></i>
+                            </div>
+                            <div class="col-10 mb-1 small" id="wishDescription">Description</div>
+                        </div>
+                        <div class="list-group-item py-3 lh-tight" aria-current="true">
+                            <div class="d-flex w-100 align-items-center justify-content-between">
+                                <strong class="mb-1">Link</strong>
+                                <i class="bi bi-link-45deg"></i>
+                            </div>
+                            <a id="wishLink" href="" target="_blank"></a>
+                        </div>
+                        <div class="list-group-item py-3 lh-tight" aria-current="true">
+                            <div class="d-flex w-100 align-items-center justify-content-between">
+                                <strong class="mb-1">Date of Creation</strong>
+                                <i class="bi bi-calendar-event"></i>
+                            </div>
+                            <div class="col-10 mb-1 small" id="wishCreated"></div>
+
+                        </div>
+                        <div class="list-group-item py-3 lh-tight" aria-current="true">
+                            <div class="d-flex w-100 align-items-center justify-content-between">
+                                <strong class="mb-1">Is FulFilled?</strong>
+                                <i class="bi bi-check-square"></i>
+                            </div>
+                            <div class="col-10 mb-1 small" id="wishFulFilled"></div>
+                        </div>
+                    </div>
+                    <div class="button-panel">
+                        <button type="button" class="btn btn-success btn-sm button-width-100">Edit wish</button>
+                    </div>
+                    <div class="button-panel">
+                        <button type="button" class="btn btn-secondary btn-sm button-width-100">Delete wish</button>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -238,20 +253,24 @@
         fulFilledWishesTable.on('click', 'tbody tr', tableClick);
 
         function tableClick(e) {
-            let classList = e.currentTarget.classList;
+            var myOffcanvas = document.getElementById('offcanvasRight');
+            var bsOffcanvas = new bootstrap.Offcanvas(myOffcanvas);
+            bsOffcanvas.show();
+            // let classList = e.currentTarget.classList;
 
-            if (classList.contains('selected')) {
-                classList.remove('selected');
-                $('#infoPanelInner').css('visibility', 'hidden');
-                $('#infoPanelNote').css('display', 'block');
-            }
-            else {
-                activeWishesTable.rows('.selected').nodes().each((row) => row.classList.remove('selected'));
-                fulFilledWishesTable.rows('.selected').nodes().each((row) => row.classList.remove('selected'));
-                classList.add('selected');
-                $('#infoPanelInner').css('visibility', 'visible');
-                $('#infoPanelNote').css('display', 'none');
-            }
+            // if (classList.contains('selected')) {
+            //     classList.remove('selected');
+            //     $('#infoPanelInner').css('visibility', 'hidden');
+            //     $('#infoPanelNote').css('display', 'block');
+            //     $('#offcanvasRight').hide();
+            // }
+            // else {
+            //     activeWishesTable.rows('.selected').nodes().each((row) => row.classList.remove('selected'));
+            //     fulFilledWishesTable.rows('.selected').nodes().each((row) => row.classList.remove('selected'));
+            //     classList.add('selected');
+            //     $('#infoPanelInner').css('visibility', 'visible');
+            //     $('#infoPanelNote').css('display', 'none');
+            // }
         }
     </script>
 

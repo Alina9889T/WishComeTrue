@@ -15,3 +15,4 @@ C:\Practicum\C#\ASP .NET\WishComeTrue\WishComeTrue.DataAccess\obj\Debug\net8.0\r
 C:\Practicum\C#\ASP .NET\WishComeTrue\WishComeTrue.DataAccess\obj\Debug\net8.0\WishComeTrue.DAL.pdb
 C:\Practicum\C#\ASP .NET\WishComeTrue\WishComeTrue.DataAccess\obj\Debug\net8.0\WishComeTrue.DAL.genruntimeconfig.cache
 C:\Practicum\C#\ASP .NET\WishComeTrue\WishComeTrue.DataAccess\obj\Debug\net8.0\ref\WishComeTrue.DAL.dll
+C:\Practicum\C#\ASP .NET\WishComeTrue\WishComeTrue.DataAccess\obj\Debug\net8.0\WishComeTrue.DAL.sourcelink.json

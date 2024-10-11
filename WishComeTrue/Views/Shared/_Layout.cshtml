@@ -7,60 +7,99 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/WishComeTrue.styles.css" asp-append-version="true" />
-
-    <style>
+	<link href="~/lib/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet" />
+	<link href="~/lib/bootstrap-icons/font/bootstrap-icons.min.css" rel="stylesheet" />
+    <style> 
         html,
         body {
-            height: 90%;
+            height: 95%;
         }
         body {
             display: flex;
             flex-direction: column;
         }
 
-        .container {
-            flex: 1 0 auto; 
+        a {
+            color: #8C6991;
         }
-        .footer {
-            flex-shrink: 0;
+
+        .text-muted {
+            color: #8C6991 !important;
+        }
+
+        .bg-custom-gradient {
+            flex: 1 0 auto;
+            --bs-body-bg-rgb: 255, 255, 255;
+            --bs-pink-rgb: 233, 167, 245;
+            --bd-peach-rgb: 253,182,176;
+            --bd-green-rgb: 110, 212, 187;
+            --bd-blue-rgb: 13, 110, 253;
+            background-image: linear-gradient(180deg, rgba(var(--bs-body-bg-rgb), 0.01), rgba(var(--bs-body-bg-rgb), 1) 85%), 
+                radial-gradient(ellipse at top left, rgba(var(--bs-pink-rgb), 0.5), transparent 50%), 
+                radial-gradient(ellipse at top right, rgba(var(--bd-peach-rgb), 0.5), transparent 50%), 
+                radial-gradient(ellipse at center right, rgba(var(--bd-green-rgb), 0.5), transparent 50%), 
+                radial-gradient(ellipse at center left, rgba(var(--bd-blue-rgb), 0.5), transparent 50%);
         }
     </style>
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light border-bottom box-shadow" style="background-color: #E8C2EE;">
+            <div class="container">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index"><i class="bi bi-house-heart"> </i>Home</a>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Wishes" asp-action="Index">Wishes</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Wishes" asp-action="Index"><i class="bi bi-balloon-heart"> </i>Wishes</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="WishLists" asp-action="Index">Wish Lists</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="WishLists" asp-action="Index"><i class="bi bi-list-stars"> </i>Wish Lists</a>
                         </li>
                     </ul>
                 </div>
             </div>
         </nav>
     </header>
-    <div class="container">
-      @*   <main role="main" class="pb-3">
+    <div class="bg-custom-gradient">
+        <div class="container">
+          @*   <main role="main" class="pb-3">
+                @RenderBody()
+            </main> *@
             @RenderBody()
-        </main> *@
-        @RenderBody()
+        </div>
     </div>
 
-    <footer class="footer border-top" style="margin-top: 15px">
-        <div style="margin-left: 5px">
-            <a asp-area="" asp-controller="Wishes" asp-action="Index">Create new wish</a>
+    @* <footer class="footer border-top">
+        <div class="container-xxl">
+            <div>
+                <a asp-area="" asp-controller="Wishes" asp-action="Index">Create new wish</a>
+            </div>
+            <div>
+                <a asp-area="" asp-controller="WishLists" asp-action="Index">Create new wish list</a>
+            </div>
         </div>
-        <div style="margin-left: 5px">
-            <a asp-area="" asp-controller="WishLists" asp-action="Index">Create new wish list</a>
+    </footer> *@
+    <footer class="bd-footer py-md-2 border-top">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3">
+                    <a class="d-inline-flex align-items-center mb-2 text-decoration-none" href="/">
+                        <span class="fs-5"><i class="bi bi-balloon-heart"> </i>Wish Come True</span>
+                    </a>
+                    <ul class="list-unstyled small">
+                        <li class="mb-2">Version v1.0.0.</li>
+                    </ul>
+                    <ul class="list-unstyled small">
+                        <li class="mb-2">2024</li>
+                    </ul>
+                </div>
+                <div class="col-6 col-lg-2">
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a asp-area="" asp-controller="Wishes" asp-action="Index">Wishes</a></li>
+                        <li class="mb-2"><a asp-area="" asp-controller="WishLists" asp-action="Index">Wish Lists</a></li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
