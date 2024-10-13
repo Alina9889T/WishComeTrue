@@ -6,6 +6,9 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WishComeTrue", "WishComeTrue\WishComeTrue.csproj", "{F8B2D7A7-DC13-46AE-93E8-66D667E8989D}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{522D33FC-B19E-4963-B6DF-D6BF70E36455}"
+	ProjectSection(SolutionItems) = preProject
+		Common\ViewModels\Wish\WishViewModel.cs = Common\ViewModels\Wish\WishViewModel.cs
+	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WishComeTrue.Common", "Common\WishComeTrue.Common.csproj", "{DE081A5A-1AF8-464E-AD83-F74114D9BEA8}"
 EndProject

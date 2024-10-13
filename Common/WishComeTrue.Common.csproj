@@ -6,4 +6,10 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Compile Remove="ViewModelsNotUsed\**" />
+    <EmbeddedResource Remove="ViewModelsNotUsed\**" />
+    <None Remove="ViewModelsNotUsed\**" />
+  </ItemGroup>
+
 </Project>

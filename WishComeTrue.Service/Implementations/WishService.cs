@@ -72,7 +72,7 @@ namespace WishComeTrue.Service.Implementations
             }
         }
 
-        public async Task<IBaseResponse<WishEntity>> Create(CreateWishViewModel model)
+        public async Task<IBaseResponse<WishEntity>> Create(WishViewModel model)
         {
                 try
                 {

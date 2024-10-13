@@ -22,7 +22,7 @@ namespace WishComeTrue.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> CreateWish(CreateWishViewModel model)
+        public async Task<IActionResult> CreateWish(WishViewModel model)
         {
             var response = await _wishService.Create(model);
 
@@ -47,7 +47,7 @@ namespace WishComeTrue.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> DeleteWish(DeleteWishViewModel model)
+        public async Task<IActionResult> DeleteWish(WishViewModel model)
         {
             var response = await _wishService.Delete(model.Id);
 

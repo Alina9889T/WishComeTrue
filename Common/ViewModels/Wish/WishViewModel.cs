@@ -25,5 +25,23 @@ namespace WishComeTrue.Common.ViewModels.Wish
 
         [Display(Name = "FulFilled")]
         public string FulFilled { get; set; }
+
+        public void Validate()
+        {
+            if (string.IsNullOrWhiteSpace(Name))
+            {
+                throw new ArgumentNullException(Name, "Please fill the name");
+            }
+
+            if (string.IsNullOrWhiteSpace(Description))
+            {
+                throw new ArgumentNullException(Description, "Please fill the desccription");
+            }
+
+            if (string.IsNullOrWhiteSpace(Link))
+            {
+                throw new ArgumentNullException(Link, "Please fill the link");
+            }
+        }
     }
 }
