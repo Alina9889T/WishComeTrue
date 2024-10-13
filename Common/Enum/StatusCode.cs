@@ -10,6 +10,7 @@ namespace WishComeTrue.Common.Enum
     {
         WishAlreadyExists = 1,
         OK = 200,
+        NotFound = 404,
         InternalServerError = 500,
     }
 }

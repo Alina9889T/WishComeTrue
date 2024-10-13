@@ -48,6 +48,7 @@
             <table class="table table-hover" id="activeWishesTableId">
                 <thead>
                     <tr>
+                        <th>Id</th>
                         <th>Name</th>
                         <th>Description</th>
                         <th>Created</th>
@@ -112,6 +113,7 @@
         </div> *@
     </div>
     
+    <!-- Off canvas -->
     <div class="offcanvas offcanvas-end bg-custom-gradient" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
         <div class="offcanvas-header">
             <h5 class="offcanvas-title" id="offcanvasRightLabel"><i class="bi bi-info-square"> </i>Info Panel</h5>
@@ -158,13 +160,38 @@
                             </div>
                             <div class="col-10 mb-1 small" id="wishFulFilled"></div>
                         </div>
+                        @* <div class="list-group-item py-3 lh-tight" aria-current="true">
+                            <div class="d-flex w-100 align-items-center justify-content-between">
+                                <strong class="mb-1">Id</strong>
+                                <i class="bi bi-check-square"></i>
+                            </div>
+                            <div class="col-10 mb-1 small" id="wishId" name="Id"></div>
+                        </div> *@
                     </div>
+                    <div class="visually-hidden" id="wishId" name="Id"></div>
                     <div class="button-panel">
                         <button type="button" class="btn btn-success btn-sm button-width-100">Edit wish</button>
                     </div>
                     <div class="button-panel">
-                        <button type="button" class="btn btn-secondary btn-sm button-width-100">Delete wish</button>
+                        <button type="button" class="btn btn-secondary btn-sm button-width-100" id="deleteWishButton">Delete wish</button>
                     </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="deleteWishModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Do you really want to delete a wish?</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="wishNameToDelete"></div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-danger" id="deleteWishConfirmButton">Delete</button>
                 </div>
             </div>
         </div>
@@ -191,6 +218,7 @@
             },
 
             columns: [
+                { data: 'id'},
                 { data: 'name'},
                 { data: 'description' },
                 { data: 'created' },
@@ -208,6 +236,7 @@
                         $('#wishLink').attr("href", data.link)
                         $('#wishCreated').text(data.created);
                         $('#wishFulFilled').text(data.fulFilled);
+                        $('#wishId').text(data.id);
                     });
                 }
             }
@@ -245,6 +274,7 @@
                         $('#wishLink').text(data.link);
                         $('#wishCreated').text(data.created);
                         $('#wishFulFilled').text(data.fulFilled);
+                        $('#wishId').text(data.id);
                     });
                 }
             }
@@ -272,6 +302,28 @@
             //     $('#infoPanelNote').css('display', 'none');
             // }
         }
+
+        $('#deleteWishButton').on('click', function (e) {
+            $('#wishNameToDelete').text($('#wishName').text());
+            const deleteWishModal = new bootstrap.Modal('#deleteWishModal', {});
+            deleteWishModal.show();
+        })
+
+        $('#deleteWishConfirmButton').on('click', function (e) {
+            e.preventDefault();
+            $.ajax({
+                type: 'POST',
+                url: '@Url.Action("DeleteWish", "Wishes")',
+                data: ({ id: $('#wishId').text() }),
+                success: function (response) {
+                    window.location.href = "/Wishes";
+                },
+                error: function (response) {
+                    var err = JSON.parse(response.responseText);
+                    alert(err.description);
+                }
+            })
+        })
     </script>
 
 @*     <script>

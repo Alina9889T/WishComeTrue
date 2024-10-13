@@ -43,22 +43,20 @@
     </style>
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light border-bottom box-shadow" style="background-color: #E8C2EE;">
-            <div class="container">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index"><i class="bi bi-house-heart"> </i>Home</a>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Wishes" asp-action="Index"><i class="bi bi-balloon-heart"> </i>Wishes</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="WishLists" asp-action="Index"><i class="bi bi-list-stars"> </i>Wish Lists</a>
-                        </li>
-                    </ul>
-                </div>
+    <header class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light border-bottom box-shadow sticky-top" style="background-color: #E8C2EE;">
+        <div class="container">
+            <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index"><i class="bi bi-house-heart"> </i>Home</a>
+            <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                <ul class="navbar-nav flex-grow-1">
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Wishes" asp-action="Index"><i class="bi bi-balloon-heart"> </i>Wishes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="WishLists" asp-action="Index"><i class="bi bi-list-stars"> </i>Wish Lists</a>
+                    </li>
+                </ul>
             </div>
-        </nav>
+        </div>
     </header>
     <div class="bg-custom-gradient">
         <div class="container">

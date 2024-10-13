@@ -2,36 +2,35 @@
     ViewData["Title"] = "Create wish";
 }
 
-<div>Here you will create a wish</div>
-<div>Name</div>
-<input />
-<div>Description</div>
-<input />
-<div>Link</div>
-<input class="w-50"/>
-<div>
-    <button class="btn btn-sm btn-success" id="applyButton">Apply</button>
-</div>
+<form id="createWishForm">
+    <div>Here you will create a wish</div>
+    <div>Name</div>
+    <input name="Name" />
+    <div>Description</div>
+    <input name="Description" />
+    <div>Link</div>
+    <input name="Link" class="w-50" />
+    <div>
+        <button class="btn btn-sm btn-success" id="applyButton">Apply</button>
+    </div>
+</form>
 
 @section Scripts {
     <script>
         $('#applyButton').on('click', function (e) {
-            alert('Create'); 
-
-            // $('#createTask').on('click', function (e) {
-            // e.preventDefault();
-            // $.ajax({
-            //     type: 'POST',
-            //     url: '@Url.Action("Create", "Task")',
-            //     data: $('#createTaskForm').serialize(),
-            //     success: function (response) {
-            //         alert(response.description);
-            //     },
-            //     error: function (response) {
-            //         var err = JSON.parse(response.responseText);
-            //         alert(err.description);
-            //     }
-            // })
+            e.preventDefault();
+            $.ajax({
+                type: 'POST',
+                url: '@Url.Action("CreateWish", "Wishes")',
+                data: $('#createWishForm').serialize(),
+                success: function (response) {
+                    window.location.href = "/Wishes";
+                },
+                error: function (response) {
+                    var err = JSON.parse(response.responseText);
+                    alert(err.description);
+                }
+            })
         })
     </script>
 }

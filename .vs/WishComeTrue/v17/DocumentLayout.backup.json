@@ -3,24 +3,24 @@
   "WorkspaceRootPath": "C:\\Practicum\\C#\\ASP .NET\\WishComeTrue\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F8B2D7A7-DC13-46AE-93E8-66D667E8989D}|WishComeTrue\\WishComeTrue.csproj|c:\\practicum\\c#\\asp .net\\wishcometrue\\wishcometrue\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{F8B2D7A7-DC13-46AE-93E8-66D667E8989D}|WishComeTrue\\WishComeTrue.csproj|solutionrelative:wishcometrue\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{F8B2D7A7-DC13-46AE-93E8-66D667E8989D}|WishComeTrue\\WishComeTrue.csproj|c:\\practicum\\c#\\asp .net\\wishcometrue\\wishcometrue\\views\\wishes\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F8B2D7A7-DC13-46AE-93E8-66D667E8989D}|WishComeTrue\\WishComeTrue.csproj|solutionrelative:wishcometrue\\views\\wishes\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F8B2D7A7-DC13-46AE-93E8-66D667E8989D}|WishComeTrue\\WishComeTrue.csproj|c:\\practicum\\c#\\asp .net\\wishcometrue\\wishcometrue\\controllers\\wishescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F8B2D7A7-DC13-46AE-93E8-66D667E8989D}|WishComeTrue\\WishComeTrue.csproj|solutionrelative:wishcometrue\\controllers\\wishescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F8B2D7A7-DC13-46AE-93E8-66D667E8989D}|WishComeTrue\\WishComeTrue.csproj|c:\\practicum\\c#\\asp .net\\wishcometrue\\wishcometrue\\views\\wishes\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{F8B2D7A7-DC13-46AE-93E8-66D667E8989D}|WishComeTrue\\WishComeTrue.csproj|solutionrelative:wishcometrue\\views\\wishes\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F8B2D7A7-DC13-46AE-93E8-66D667E8989D}|WishComeTrue\\WishComeTrue.csproj|c:\\practicum\\c#\\asp .net\\wishcometrue\\wishcometrue\\views\\wishes\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{F8B2D7A7-DC13-46AE-93E8-66D667E8989D}|WishComeTrue\\WishComeTrue.csproj|solutionrelative:wishcometrue\\views\\wishes\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{ED278860-1E0A-4C4B-8B2F-1E8854FD2DE1}|WishComeTrue.DataAccess\\WishComeTrue.DAL.csproj|c:\\practicum\\c#\\asp .net\\wishcometrue\\wishcometrue.dataaccess\\repositories\\wishesrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ED278860-1E0A-4C4B-8B2F-1E8854FD2DE1}|WishComeTrue.DataAccess\\WishComeTrue.DAL.csproj|solutionrelative:wishcometrue.dataaccess\\repositories\\wishesrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F8B2D7A7-DC13-46AE-93E8-66D667E8989D}|WishComeTrue\\WishComeTrue.csproj|c:\\practicum\\c#\\asp .net\\wishcometrue\\wishcometrue\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{F8B2D7A7-DC13-46AE-93E8-66D667E8989D}|WishComeTrue\\WishComeTrue.csproj|solutionrelative:wishcometrue\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F8B2D7A7-DC13-46AE-93E8-66D667E8989D}|WishComeTrue\\WishComeTrue.csproj|c:\\practicum\\c#\\asp .net\\wishcometrue\\wishcometrue\\controllers\\wishescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F8B2D7A7-DC13-46AE-93E8-66D667E8989D}|WishComeTrue\\WishComeTrue.csproj|solutionrelative:wishcometrue\\controllers\\wishescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{8FD27414-C5A7-4F60-A562-4F87230E75ED}|WishComeTrue.Service\\WishComeTrue.Service.csproj|c:\\practicum\\c#\\asp .net\\wishcometrue\\wishcometrue.service\\implementations\\wishservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8FD27414-C5A7-4F60-A562-4F87230E75ED}|WishComeTrue.Service\\WishComeTrue.Service.csproj|solutionrelative:wishcometrue.service\\implementations\\wishservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,70 +30,69 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Create.cshtml",
-              "DocumentMoniker": "C:\\Practicum\\C#\\ASP .NET\\WishComeTrue\\WishComeTrue\\Views\\Wishes\\Create.cshtml",
-              "RelativeDocumentMoniker": "WishComeTrue\\Views\\Wishes\\Create.cshtml",
-              "ToolTip": "C:\\Practicum\\C#\\ASP .NET\\WishComeTrue\\WishComeTrue\\Views\\Wishes\\Create.cshtml",
-              "RelativeToolTip": "WishComeTrue\\Views\\Wishes\\Create.cshtml",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAwAAAAdAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-10-11T00:28:48.139Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "WishesController.cs",
-              "DocumentMoniker": "C:\\Practicum\\C#\\ASP .NET\\WishComeTrue\\WishComeTrue\\Controllers\\WishesController.cs",
-              "RelativeDocumentMoniker": "WishComeTrue\\Controllers\\WishesController.cs",
-              "ToolTip": "C:\\Practicum\\C#\\ASP .NET\\WishComeTrue\\WishComeTrue\\Controllers\\WishesController.cs",
-              "RelativeToolTip": "WishComeTrue\\Controllers\\WishesController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-11T00:24:54.244Z"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "C:\\Practicum\\C#\\ASP .NET\\WishComeTrue\\WishComeTrue\\Views\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "WishComeTrue\\Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "C:\\Practicum\\C#\\ASP .NET\\WishComeTrue\\WishComeTrue\\Views\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "WishComeTrue\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAACQAAAAAAAAAAAAAADQAAABwAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-10-10T16:01:04.39Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Practicum\\C#\\ASP .NET\\WishComeTrue\\WishComeTrue\\Views\\Wishes\\Index.cshtml",
               "RelativeDocumentMoniker": "WishComeTrue\\Views\\Wishes\\Index.cshtml",
               "ToolTip": "C:\\Practicum\\C#\\ASP .NET\\WishComeTrue\\WishComeTrue\\Views\\Wishes\\Index.cshtml",
               "RelativeToolTip": "WishComeTrue\\Views\\Wishes\\Index.cshtml",
-              "ViewState": "AgIAACQAAAAAAAAAAAAAAC0AAAA2AAAAAAAAAA==",
+              "ViewState": "AgIAAA8BAAAAAAAAAAAwwCMBAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-10-06T20:23:41.046Z",
+              "WhenOpened": "2024-10-11T18:51:36.58Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Practicum\\C#\\ASP .NET\\WishComeTrue\\WishComeTrue\\Views\\Home\\Index.cshtml",
-              "RelativeDocumentMoniker": "WishComeTrue\\Views\\Home\\Index.cshtml",
-              "ToolTip": "C:\\Practicum\\C#\\ASP .NET\\WishComeTrue\\WishComeTrue\\Views\\Home\\Index.cshtml",
-              "RelativeToolTip": "WishComeTrue\\Views\\Home\\Index.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAnAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Practicum\\C#\\ASP .NET\\WishComeTrue\\WishComeTrue\\Views\\Wishes\\Create.cshtml",
+              "RelativeDocumentMoniker": "WishComeTrue\\Views\\Wishes\\Create.cshtml",
+              "ToolTip": "C:\\Practicum\\C#\\ASP .NET\\WishComeTrue\\WishComeTrue\\Views\\Wishes\\Create.cshtml",
+              "RelativeToolTip": "WishComeTrue\\Views\\Wishes\\Create.cshtml",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABgAAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-10-06T18:24:10.257Z"
+              "WhenOpened": "2024-10-11T00:28:48.139Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "WishesRepository.cs",
+              "DocumentMoniker": "C:\\Practicum\\C#\\ASP .NET\\WishComeTrue\\WishComeTrue.DataAccess\\Repositories\\WishesRepository.cs",
+              "RelativeDocumentMoniker": "WishComeTrue.DataAccess\\Repositories\\WishesRepository.cs",
+              "ToolTip": "C:\\Practicum\\C#\\ASP .NET\\WishComeTrue\\WishComeTrue.DataAccess\\Repositories\\WishesRepository.cs",
+              "RelativeToolTip": "WishComeTrue.DataAccess\\Repositories\\WishesRepository.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAA1wAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-11T18:48:14.257Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "WishesController.cs",
+              "DocumentMoniker": "C:\\Practicum\\C#\\ASP .NET\\WishComeTrue\\WishComeTrue\\Controllers\\WishesController.cs",
+              "RelativeDocumentMoniker": "WishComeTrue\\Controllers\\WishesController.cs",
+              "ToolTip": "C:\\Practicum\\C#\\ASP .NET\\WishComeTrue\\WishComeTrue\\Controllers\\WishesController.cs",
+              "RelativeToolTip": "WishComeTrue\\Controllers\\WishesController.cs",
+              "ViewState": "AgIAACIAAAAAAAAAAAAAADIAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-11T00:24:54.244Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "WishService.cs",
+              "DocumentMoniker": "C:\\Practicum\\C#\\ASP .NET\\WishComeTrue\\WishComeTrue.Service\\Implementations\\WishService.cs",
+              "RelativeDocumentMoniker": "WishComeTrue.Service\\Implementations\\WishService.cs",
+              "ToolTip": "C:\\Practicum\\C#\\ASP .NET\\WishComeTrue\\WishComeTrue.Service\\Implementations\\WishService.cs",
+              "RelativeToolTip": "WishComeTrue.Service\\Implementations\\WishService.cs",
+              "ViewState": "AgIAAGsAAAAAAAAAAAAkwHMAAAA5AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-11T18:09:37.933Z"
             }
           ]
         }

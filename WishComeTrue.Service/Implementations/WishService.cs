@@ -71,5 +71,71 @@ namespace WishComeTrue.Service.Implementations
                 };
             }
         }
+
+        public async Task<IBaseResponse<WishEntity>> Create(CreateWishViewModel model)
+        {
+                try
+                {
+                    model.Validate();
+
+                    var task = new WishEntity()
+                    {
+                        Id = Guid.NewGuid().ToString(),
+                        Name = model.Name,
+                        Description = model.Description,
+                        Link = model.Link,
+                        Created = DateTime.Now,
+                        FulFilled = false
+                    };
+                    await _wishesRepository.Create(task);
+
+                    return new BaseResponse<WishEntity>()
+                    {
+                        Description = "Wish created! :)",
+                        StatusCode = StatusCode.OK
+                    };
+                }
+                catch (Exception ex)
+                {
+                    return new BaseResponse<WishEntity>()
+                    {
+                        Description = ex.Message,
+                        StatusCode = StatusCode.InternalServerError
+                    };
+                }
+        }
+
+        public async Task<IBaseResponse<WishEntity>> Delete(string wishId)
+        {
+            try
+            {
+                var wish = _wishesRepository.GetAll().Where(w => w.Id == wishId).FirstOrDefault();
+
+                if (wish == null)
+                {
+                    return new BaseResponse<WishEntity>()
+                    {
+                        Description = "Wish not found",
+                        StatusCode = StatusCode.NotFound
+                    };
+                }
+
+                await _wishesRepository.Delete(wish);
+
+                return new BaseResponse<WishEntity>()
+                {
+                    Description = "Wish deleted!",
+                    StatusCode = StatusCode.OK
+                };
+            }
+            catch (Exception ex)
+            {
+                return new BaseResponse<WishEntity>()
+                {
+                    Description = ex.Message,
+                    StatusCode = StatusCode.InternalServerError
+                };
+            }
+        }
     }
 }

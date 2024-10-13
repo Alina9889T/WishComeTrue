@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("WishComeTrue.DAL")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+de74df34d04aa45d53f44f2307174b6928fbe7f7")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2aafc113eb86acc23f6af68b460472622e3544ed")]
 [assembly: System.Reflection.AssemblyProductAttribute("WishComeTrue.DAL")]
 [assembly: System.Reflection.AssemblyTitleAttribute("WishComeTrue.DAL")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

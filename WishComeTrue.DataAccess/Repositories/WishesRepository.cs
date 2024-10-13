@@ -20,5 +20,23 @@ namespace WishComeTrue.DAL.Repositories
         {
             return _appDBContext.Wishes;
         }
+
+        public async Task Create(WishEntity entity)
+        {
+            await _appDBContext.Wishes.AddAsync(entity);
+            await _appDBContext.SaveChangesAsync();
+        }
+
+        public async Task Update(WishEntity entity)
+        {
+            _appDBContext.Wishes.Update(entity);
+            await _appDBContext.SaveChangesAsync();
+        }
+
+        public async Task Delete(WishEntity entity)
+        {
+            _appDBContext.Wishes.Remove(entity);
+            await _appDBContext.SaveChangesAsync();
+        }
     }
 }

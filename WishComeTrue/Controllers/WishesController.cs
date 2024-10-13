@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using WishComeTrue.Common.ViewModels.Wish;
 using WishComeTrue.Service.Interfaces;
 
 namespace WishComeTrue.Controllers
@@ -20,6 +21,19 @@ namespace WishComeTrue.Controllers
             return View();
         }
 
+        [HttpPost]
+        public async Task<IActionResult> CreateWish(CreateWishViewModel model)
+        {
+            var response = await _wishService.Create(model);
+
+            if (response.StatusCode == Common.Enum.StatusCode.OK)
+            {
+
+                return Ok(new { description = response.Description });
+            };
+            return BadRequest(new { description = response.Description });
+        }
+
         public async Task<IActionResult> ActiveWishesHandler()
         {
             var response = await _wishService.GetWishes(onlyActive: true);
@@ -30,6 +44,18 @@ namespace WishComeTrue.Controllers
         {
             var response = await _wishService.GetWishes(onlyFulFilled: true);
             return Json(new { response.Data });
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> DeleteWish(DeleteWishViewModel model)
+        {
+            var response = await _wishService.Delete(model.Id);
+
+            if (response.StatusCode == Common.Enum.StatusCode.OK)
+            {
+                return Ok(new { description = response.Description });
+            };
+            return BadRequest(new { description = response.Description });
         }
     }
 }
