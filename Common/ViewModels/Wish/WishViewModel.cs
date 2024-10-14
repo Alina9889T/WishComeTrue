@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.VisualBasic;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -24,8 +25,12 @@ namespace WishComeTrue.Common.ViewModels.Wish
         [DataType(DataType.Date)]
         public DateTime Created { get; set; }
 
+        public string CreatedString { get { return Created.Date.ToString("dd.MM.yyyy"); } }
+
         [Display(Name = "FulFilled")]
         public bool FulFilled { get; set; }
+
+        public string FulFilledString { get { return FulFilled ? "Yes :)" : "Not yet :("; } }
 
         public void Validate()
         {

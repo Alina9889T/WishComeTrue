@@ -21,6 +21,7 @@ namespace WishComeTrue.Controllers
         public async Task<IActionResult> FulFilledWishesHandler()
         {
             var response = await _wishService.GetWishes(onlyFulFilled: true);
+            var rsp = Json(new { response.Data }).ToString();
             return Json(new { response.Data });
         }
 

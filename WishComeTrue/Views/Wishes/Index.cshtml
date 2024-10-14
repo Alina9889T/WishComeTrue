@@ -194,8 +194,8 @@
                 { data: 'name'},
                 { data: 'description' },
                 { data: 'link', visible: false },
-                { data: 'created' },
-                { data: 'fulFilled' },
+                { data: 'createdString' },
+                { data: 'fulFilledString' },
             ],
 
             createdRow: function(nRow, data) {
@@ -229,8 +229,8 @@
                 { data: 'name' },
                 { data: 'description' },
                 { data: 'link', visible: false },
-                { data: 'created' },
-                { data: 'fulFilled' },
+                { data: 'createdString' },
+                { data: 'fulFilledString' },
             ],
 
             createdRow: function (nRow, data) {
@@ -285,8 +285,8 @@
             $('#wishLink').attr("href", data.link);
             $('#wishLinkInput').val(data.link);
 
-            $('#wishCreated').text(data.created);
-            $('#wishFulFilled').text(data.fulFilled);
+            $('#wishCreated').text(data.createdString);
+            $('#wishFulFilled').text(data.fulFilledString);
             $('#wishId').text(data.id);
 
             $('#editWishButton').css('display', 'inline-block');
