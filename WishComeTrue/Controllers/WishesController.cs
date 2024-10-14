@@ -11,28 +11,6 @@ namespace WishComeTrue.Controllers
         {
             _wishService = wishService;
         }
-        public IActionResult Index()
-        {
-            return View();
-        }
-
-        public IActionResult Create()
-        {
-            return View();
-        }
-
-        [HttpPost]
-        public async Task<IActionResult> CreateWish(WishViewModel model)
-        {
-            var response = await _wishService.Create(model);
-
-            if (response.StatusCode == Common.Enum.StatusCode.OK)
-            {
-
-                return Ok(new { description = response.Description });
-            };
-            return BadRequest(new { description = response.Description });
-        }
 
         public async Task<IActionResult> ActiveWishesHandler()
         {
@@ -46,8 +24,52 @@ namespace WishComeTrue.Controllers
             return Json(new { response.Data });
         }
 
+        public IActionResult Index()
+        {
+            return View();
+        }
+
+        
+        public IActionResult Create()
+        {
+            return View();
+        }
+
         [HttpPost]
-        public async Task<IActionResult> DeleteWish(WishViewModel model)
+        public async Task<IActionResult> Create(WishViewModel model)
+        {
+            var response = await _wishService.Create(model);
+
+            if (response.StatusCode == Common.Enum.StatusCode.OK)
+            {
+
+                return Ok(new { description = response.Description });
+            };
+            return BadRequest(new { description = response.Description });
+        }
+
+        public IActionResult Edit()
+        {
+            return View("Create");
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Edit(WishViewModel model)
+        {
+            return NotFound();
+            //var response = await _wishService.Create(model);
+
+            //if (response.StatusCode == Common.Enum.StatusCode.OK)
+            //{
+
+            //    return Ok(new { description = response.Description });
+            //};
+            //return BadRequest(new { description = response.Description });
+        }
+
+
+        [HttpPost]
+        public async Task<IActionResult> Delete(WishViewModel model)
         {
             var response = await _wishService.Delete(model.Id);
 

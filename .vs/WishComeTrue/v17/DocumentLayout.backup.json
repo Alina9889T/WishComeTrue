@@ -3,20 +3,12 @@
   "WorkspaceRootPath": "C:\\Practicum\\C#\\ASP .NET\\WishComeTrue\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{DE081A5A-1AF8-464E-AD83-F74114D9BEA8}|Common\\WishComeTrue.Common.csproj|c:\\practicum\\c#\\asp .net\\wishcometrue\\common\\viewmodels\\wish\\wishviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE081A5A-1AF8-464E-AD83-F74114D9BEA8}|Common\\WishComeTrue.Common.csproj|solutionrelative:common\\viewmodels\\wish\\wishviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F8B2D7A7-DC13-46AE-93E8-66D667E8989D}|WishComeTrue\\WishComeTrue.csproj|c:\\practicum\\c#\\asp .net\\wishcometrue\\wishcometrue\\views\\wishes\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F8B2D7A7-DC13-46AE-93E8-66D667E8989D}|WishComeTrue\\WishComeTrue.csproj|solutionrelative:wishcometrue\\views\\wishes\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F8B2D7A7-DC13-46AE-93E8-66D667E8989D}|WishComeTrue\\WishComeTrue.csproj|c:\\practicum\\c#\\asp .net\\wishcometrue\\wishcometrue\\controllers\\wishescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F8B2D7A7-DC13-46AE-93E8-66D667E8989D}|WishComeTrue\\WishComeTrue.csproj|solutionrelative:wishcometrue\\controllers\\wishescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8FD27414-C5A7-4F60-A562-4F87230E75ED}|WishComeTrue.Service\\WishComeTrue.Service.csproj|c:\\practicum\\c#\\asp .net\\wishcometrue\\wishcometrue.service\\implementations\\wishservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8FD27414-C5A7-4F60-A562-4F87230E75ED}|WishComeTrue.Service\\WishComeTrue.Service.csproj|solutionrelative:wishcometrue.service\\implementations\\wishservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8FD27414-C5A7-4F60-A562-4F87230E75ED}|WishComeTrue.Service\\WishComeTrue.Service.csproj|c:\\practicum\\c#\\asp .net\\wishcometrue\\wishcometrue.service\\interfaces\\iwishservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8FD27414-C5A7-4F60-A562-4F87230E75ED}|WishComeTrue.Service\\WishComeTrue.Service.csproj|solutionrelative:wishcometrue.service\\interfaces\\iwishservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -31,40 +23,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "WishViewModel.cs",
-              "DocumentMoniker": "C:\\Practicum\\C#\\ASP .NET\\WishComeTrue\\Common\\ViewModels\\Wish\\WishViewModel.cs",
-              "RelativeDocumentMoniker": "Common\\ViewModels\\Wish\\WishViewModel.cs",
-              "ToolTip": "C:\\Practicum\\C#\\ASP .NET\\WishComeTrue\\Common\\ViewModels\\Wish\\WishViewModel.cs",
-              "RelativeToolTip": "Common\\ViewModels\\Wish\\WishViewModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-13T17:40:39.517Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "IWishService.cs",
-              "DocumentMoniker": "C:\\Practicum\\C#\\ASP .NET\\WishComeTrue\\WishComeTrue.Service\\Interfaces\\IWishService.cs",
-              "RelativeDocumentMoniker": "WishComeTrue.Service\\Interfaces\\IWishService.cs",
-              "ToolTip": "C:\\Practicum\\C#\\ASP .NET\\WishComeTrue\\WishComeTrue.Service\\Interfaces\\IWishService.cs",
-              "RelativeToolTip": "WishComeTrue.Service\\Interfaces\\IWishService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-13T17:38:33.822Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "WishService.cs",
-              "DocumentMoniker": "C:\\Practicum\\C#\\ASP .NET\\WishComeTrue\\WishComeTrue.Service\\Implementations\\WishService.cs",
-              "RelativeDocumentMoniker": "WishComeTrue.Service\\Implementations\\WishService.cs",
-              "ToolTip": "C:\\Practicum\\C#\\ASP .NET\\WishComeTrue\\WishComeTrue.Service\\Implementations\\WishService.cs",
-              "RelativeToolTip": "WishComeTrue.Service\\Implementations\\WishService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-13T17:38:18.622Z",
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Practicum\\C#\\ASP .NET\\WishComeTrue\\WishComeTrue\\Views\\Wishes\\Index.cshtml",
+              "RelativeDocumentMoniker": "WishComeTrue\\Views\\Wishes\\Index.cshtml",
+              "ToolTip": "C:\\Practicum\\C#\\ASP .NET\\WishComeTrue\\WishComeTrue\\Views\\Wishes\\Index.cshtml",
+              "RelativeToolTip": "WishComeTrue\\Views\\Wishes\\Index.cshtml",
+              "ViewState": "AgIAAM8AAAAAAAAAAAAAAOgAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-14T07:38:09.089Z",
               "EditorCaption": ""
             },
             {
@@ -75,7 +41,7 @@
               "RelativeDocumentMoniker": "WishComeTrue\\Controllers\\WishesController.cs",
               "ToolTip": "C:\\Practicum\\C#\\ASP .NET\\WishComeTrue\\WishComeTrue\\Controllers\\WishesController.cs",
               "RelativeToolTip": "WishComeTrue\\Controllers\\WishesController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAC0AAABGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-13T17:34:58.09Z",
               "EditorCaption": ""

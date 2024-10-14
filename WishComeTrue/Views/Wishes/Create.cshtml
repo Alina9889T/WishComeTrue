@@ -21,7 +21,7 @@
             e.preventDefault();
             $.ajax({
                 type: 'POST',
-                url: '@Url.Action("CreateWish", "Wishes")',
+                url: '@Url.Action("Create", "Wishes")',
                 data: $('#createWishForm').serialize(),
                 success: function (response) {
                     window.location.href = "/Wishes";

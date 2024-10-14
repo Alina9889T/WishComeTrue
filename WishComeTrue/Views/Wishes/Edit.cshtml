@@ -1,0 +1,26 @@
+﻿@model WishComeTrue.Common.ViewModels.Wish.WishViewModel
+@{
+    ViewData["Title"] = "Edit wish";
+}
+
+<form id="editWishForm">
+    <div>Here you will edit a wish</div>
+    <div>Name</div>
+    <input asp-for="Name" name="Name" />
+    <div>Description</div>
+    <input asp-for="Description" name="Description" />
+    <div>Link</div>
+    <input asp-for="Link" name="Link" class="w-50" />
+    <div>
+        <button class="btn btn-sm btn-success" type="submit" applyButton">Apply</button>
+    </div>
+    <div>
+        <a asp-action="Index">Назад к списку</a>
+    </div>
+</form>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
