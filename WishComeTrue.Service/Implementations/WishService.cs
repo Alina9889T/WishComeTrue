@@ -72,6 +72,11 @@ namespace WishComeTrue.Service.Implementations
             }
         }
 
+        public WishEntity GetWishById(string id)
+        {
+            return _wishesRepository.GetWishById(id);
+        }
+
         public async Task<IBaseResponse<WishEntity>> Create(WishViewModel model)
         {
                 try
@@ -103,6 +108,43 @@ namespace WishComeTrue.Service.Implementations
                         StatusCode = StatusCode.InternalServerError
                     };
                 }
+        }
+
+        public async Task<IBaseResponse<WishEntity>> Update(WishViewModel model)
+        {
+            try
+            {
+                model.Validate();
+
+                var wish = GetWishById(model.Id);
+                if (wish == null)
+                {
+                    return new BaseResponse<WishEntity>()
+                    {
+                        Description = "Wish to update not found",
+                        StatusCode = StatusCode.NotFound
+                    };
+                }
+
+                wish.Name = model.Name;
+                wish.Description = model.Description;
+                wish.Link = model.Link;
+                await _wishesRepository.Update(wish);
+
+                return new BaseResponse<WishEntity>()
+                {
+                    Description = "Wish edited! :)",
+                    StatusCode = StatusCode.OK
+                };
+            }
+            catch (Exception ex)
+            {
+                return new BaseResponse<WishEntity>()
+                {
+                    Description = ex.Message,
+                    StatusCode = StatusCode.InternalServerError
+                };
+            }
         }
 
         public async Task<IBaseResponse<WishEntity>> Delete(string wishId)

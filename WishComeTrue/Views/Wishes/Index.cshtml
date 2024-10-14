@@ -103,6 +103,7 @@
                                 <i class="bi bi-chat-left-dots"></i>
                             </div>
                             <div class="col-10 mb-1 small" id="wishName"></div>
+                            <input class="col-10 mb-1 small" id="wishNameInput" style="display: none" />
                         </div>
                         <div class="list-group-item py-3 lh-tight" aria-current="true">
                             <div class="d-flex w-100 align-items-center justify-content-between">
@@ -110,6 +111,7 @@
                                 <i class="bi bi-chat-left-text"></i>
                             </div>
                             <div class="col-10 mb-1 small" id="wishDescription">Description</div>
+                            <input class="col-10 mb-1 small" id="wishDescriptionInput" style="display: none" />
                         </div>
                         <div class="list-group-item py-3 lh-tight" aria-current="true">
                             <div class="d-flex w-100 align-items-center justify-content-between">
@@ -117,6 +119,7 @@
                                 <i class="bi bi-link-45deg"></i>
                             </div>
                             <a id="wishLink" href="" target="_blank"></a>
+                            <input class="col-10 mb-1 small" id="wishLinkInput" style="display: none" />
                         </div>
                         <div class="list-group-item py-3 lh-tight" aria-current="true">
                             <div class="d-flex w-100 align-items-center justify-content-between">
@@ -135,6 +138,9 @@
                         </div>
                     </div>
                     <div class="visually-hidden" id="wishId" name="Id"></div>
+                    <div class="button-panel">
+                        <button type="button" class="btn btn-success btn-sm" id="applyWishButton" style="display: none">Apply changes</button>
+                    </div>
                     <div class="button-panel">
                         <button type="button" class="btn btn-success btn-sm button-width-100" id="editWishButton">Edit wish</button>
                     </div>
@@ -197,13 +203,7 @@
                     $('td', nRow).eq(i).css('cursor', 'pointer');
 
                     $('td', nRow).eq(i).on('click', function (e) {
-                        $('#wishName').text(data.name);
-                        $('#wishDescription').text(data.description);
-                        $('#wishLink').text(data.link);
-                        $('#wishLink').attr("href", data.link)
-                        $('#wishCreated').text(data.created);
-                        $('#wishFulFilled').text(data.fulFilled);
-                        $('#wishId').text(data.id);
+                        prepareOffCanvas(data);
                     });
                 }
             }
@@ -238,12 +238,7 @@
                     $('td', nRow).eq(i).css('cursor', 'pointer');
 
                     $('td', nRow).eq(i).on('click', function (e) {
-                        $('#wishName').text(data.name);
-                        $('#wishDescription').text(data.description);
-                        $('#wishLink').text(data.link);
-                        $('#wishCreated').text(data.created);
-                        $('#wishFulFilled').text(data.fulFilled);
-                        $('#wishId').text(data.id);
+                        prepareOffCanvas(data);
                     });
                 }
             }
@@ -272,15 +267,61 @@
             // }
         }
 
+        function prepareOffCanvas(data) 
+        {
+            $('#wishName').css('display', 'block');
+            $('#wishNameInput').css('display', 'none');
+            $('#wishName').text(data.name);
+            $('#wishNameInput').val(data.name);
+
+            $('#wishDescription').css('display', 'block');
+            $('#wishDescriptionInput').css('display', 'none');
+            $('#wishDescription').text(data.description);
+            $('#wishDescriptionInput').val(data.description);
+
+            $('#wishLink').css('display', 'block');
+            $('#wishLinkInput').css('display', 'none');
+            $('#wishLink').text(data.link);
+            $('#wishLink').attr("href", data.link);
+            $('#wishLinkInput').val(data.link);
+
+            $('#wishCreated').text(data.created);
+            $('#wishFulFilled').text(data.fulFilled);
+            $('#wishId').text(data.id);
+
+            $('#editWishButton').css('display', 'inline-block');
+            $('#deleteWishButton').css('display', 'inline-block');
+            $('#applyWishButton').css('display', 'none');
+        }
+
         $('#editWishButton').on('click', function (e) {
+            $('#wishName').css('display', 'none');
+            $('#wishNameInput').css('display', 'block');
+
+            $('#wishDescription').css('display', 'none');
+            $('#wishDescriptionInput').css('display', 'block');
+
+            $('#wishLink').css('display', 'none');
+            $('#wishLinkInput').css('display', 'block');
+
+            $('#editWishButton').css('display', 'none');
+            $('#deleteWishButton').css('display', 'none');
+            $('#applyWishButton').css('display', 'inline-block');
+        })
+
+        $('#applyWishButton').on('click', function (e) {
             e.preventDefault();
             $.ajax({
-                type: 'GET',
-                url: '@Url.Action("Edit", "Wishes")',
+                type: 'POST',
+                url: '@Url.Action("Update", "Wishes")',
                 data: ({ 
-                    id: $('#wishId').text() 
+                    id: $('#wishId').text(),
+                    name: $('#wishNameInput').val(),
+                    description: $('#wishDescriptionInput').val(),
+                    link: $('#wishLinkInput').val()
                 }),
                 success: function (response) {
+                    window.location.href = "/Wishes";
                 },
                 error: function (response) {
                     var err = JSON.parse(response.responseText);

@@ -42,29 +42,21 @@ namespace WishComeTrue.Controllers
 
             if (response.StatusCode == Common.Enum.StatusCode.OK)
             {
-
                 return Ok(new { description = response.Description });
             };
             return BadRequest(new { description = response.Description });
         }
 
-        public IActionResult Edit()
-        {
-            return View("Create");
-        }
-
         [HttpPost]
-        public async Task<IActionResult> Edit(WishViewModel model)
+        public async Task<IActionResult> Update(WishViewModel model)
         {
-            return NotFound();
-            //var response = await _wishService.Create(model);
+            var response = await _wishService.Update(model);
 
-            //if (response.StatusCode == Common.Enum.StatusCode.OK)
-            //{
-
-            //    return Ok(new { description = response.Description });
-            //};
-            //return BadRequest(new { description = response.Description });
+            if (response.StatusCode == Common.Enum.StatusCode.OK)
+            {
+                return Ok(new { description = response.Description });
+            };
+            return BadRequest(new { description = response.Description });
         }
 
 

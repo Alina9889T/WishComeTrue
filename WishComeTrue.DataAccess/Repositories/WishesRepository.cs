@@ -21,6 +21,11 @@ namespace WishComeTrue.DAL.Repositories
             return _appDBContext.Wishes;
         }
 
+        public WishEntity GetWishById(string id)
+        {
+            return _appDBContext.Wishes.Find(id);
+        }
+
         public async Task Create(WishEntity entity)
         {
             await _appDBContext.Wishes.AddAsync(entity);
