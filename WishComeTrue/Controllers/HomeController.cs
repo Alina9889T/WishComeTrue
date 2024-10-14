@@ -13,9 +13,10 @@ namespace WishComeTrue.Controllers
             _wishService = wishService;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            return View();
+            var response = await _wishService.GetWishes(recent: true);
+            return View(response.Data);
         }
 
         public async Task<IActionResult> RecentWishesHandler()

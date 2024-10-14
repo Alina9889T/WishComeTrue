@@ -51,8 +51,8 @@ namespace WishComeTrue.Service.Implementations
                      Name = x.Name,
                      Description = x.Description,
                      Link = x.Link,
-                     Created = x.Created.ToLongDateString(),
-                     FulFilled = x.FulFilled ? "Yes :)" : "Not yet :(",
+                     Created = x.Created,
+                     FulFilled = x.FulFilled,
                  });
 
                 return new BaseResponse<IEnumerable<WishViewModel>>()

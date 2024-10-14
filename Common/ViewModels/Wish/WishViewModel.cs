@@ -21,10 +21,11 @@ namespace WishComeTrue.Common.ViewModels.Wish
         public string Link { get; set; }
 
         [Display(Name = "Created")]
-        public string Created { get; set; }
+        [DataType(DataType.Date)]
+        public DateTime Created { get; set; }
 
         [Display(Name = "FulFilled")]
-        public string FulFilled { get; set; }
+        public bool FulFilled { get; set; }
 
         public void Validate()
         {

@@ -1,4 +1,6 @@
-﻿@{
+﻿@using WishComeTrue.Common.ViewModels.Wish;
+@model IEnumerable<WishViewModel>;
+@{
     ViewData["Title"] = "Home Page";
 }
 
@@ -25,6 +27,36 @@
         </tr>
     </thead>
     <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Link)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Created)
+                </td>
+                <td>
+                    @if (item.FulFilled)
+                    {
+                        <span>Yes :)</span>
+                    }
+                    else
+                    {
+                        <span>Not yet :(</span>
+                    }
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
 
@@ -40,28 +72,14 @@
             paging: false,
             sorting: false,
 
-            ajax: {
-                url: "@Url.Action("RecentWishesHandler")",
-                method: 'POST',
-                data: null
-            },
-
             columns: [
+                { data: 'name', visible: false},
                 { data: 'name'},
                 { data: 'description' },
                 { data: 'link' },
                 { data: 'created' },
                 { data: 'fulFilled' },
             ],
-
-            // createdRow: function(nRow, data) {
-            //     for (var i = 0; i < dataTable.columns().header().length - 1; i++) {
-            //         $('td', nRow).eq(i).css('cursor', 'pointer');
-
-            //         $('td', nRow).eq(i).on('click', null);
-            //     }
-            //     $('td button', nRow).eq(i).on('click', null);
-            // }
         });
     </script>
 }
