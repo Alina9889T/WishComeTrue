@@ -2,8 +2,7 @@
     ViewData["Title"] = "Create wish";
 }
 
-<form id="createWishForm">
-    <div>Here you will create a wish</div>
+@* <form id="createWishForm">
     <div>Name</div>
     <input name="Name" />
     <div>Description</div>
@@ -13,7 +12,32 @@
     <div>
         <button class="btn btn-sm btn-success" id="applyButton">Apply</button>
     </div>
-</form>
+</form> *@
+
+<div class="d-flex align-items-center py-4 bg-body-tertiary">
+    <main class="form-signin w-50 m-auto">
+        <form>
+            <div class="display-5 mt-4" style="color: #E6B2EE;"><i class="bi bi-balloon-heart"></i></div>
+            <h5 class="mb-3 text-muted">Please fill the following information</h5>
+
+            <div class="form-floating mb-3">
+                <input class="form-control" id="floatingName" name="Name">
+                <label for="floatingName">Wish Name</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input class="form-control" id="floatingDescription" name="Description">
+                <label for="floatingDescription">Wish Description</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input class="form-control" id="floatingLink" name="Link">
+                <label for="floatingLink">Wish Link</label>
+            </div>
+
+            <button class="btn btn-success w-100 py-2" id="applyButton" type="submit">Apply</button>
+            <p class="mt-1 mb-3 text-body-secondary" style="text-align: right">Let your wish come true!</p>
+        </form>
+    </main>
+</div>
 
 @section Scripts {
     <script>
