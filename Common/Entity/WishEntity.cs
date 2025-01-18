@@ -14,5 +14,7 @@ namespace WishComeTrue.Common.Entity
         public string Link { get; set; }
         public DateTime Created { get; set; }
         public bool FulFilled { get; set; }
+        public int? CategoryId { get; set; }
+        public CategoryEntity Category {  get; set; }
     }
 }

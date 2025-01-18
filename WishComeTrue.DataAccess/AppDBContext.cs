@@ -16,5 +16,7 @@ namespace WishComeTrue.DAL
         }
 
         public DbSet<WishEntity> Wishes { get; set; }
+
+        public DbSet<CategoryEntity> Categories { get; set; }
     }
 }
