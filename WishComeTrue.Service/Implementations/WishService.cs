@@ -74,7 +74,7 @@ namespace WishComeTrue.Service.Implementations
 
         public WishEntity GetWishById(string id)
         {
-            return _wishesRepository.GetWishById(id);
+            return _wishesRepository.GetById(id);
         }
 
         public async Task<IBaseResponse<WishEntity>> Create(WishViewModel model)
@@ -129,6 +129,7 @@ namespace WishComeTrue.Service.Implementations
                 wish.Name = model.Name;
                 wish.Description = model.Description;
                 wish.Link = model.Link;
+                wish.FulFilled = model.FulFilled;
                 await _wishesRepository.Update(wish);
 
                 return new BaseResponse<WishEntity>()

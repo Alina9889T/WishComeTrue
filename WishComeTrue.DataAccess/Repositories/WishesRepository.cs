@@ -21,7 +21,7 @@ namespace WishComeTrue.DAL.Repositories
             return _appDBContext.Wishes;
         }
 
-        public WishEntity GetWishById(string id)
+        public WishEntity GetById(string id)
         {
             return _appDBContext.Wishes.Find(id);
         }
