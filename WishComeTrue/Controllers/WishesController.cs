@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using WishComeTrue.Common.ViewModels.Category;
 using WishComeTrue.Common.ViewModels.Wish;
 using WishComeTrue.Service.Interfaces;
 
@@ -7,9 +8,11 @@ namespace WishComeTrue.Controllers
     public class WishesController : Controller
     {
         private readonly IWishService _wishService;
-        public WishesController(IWishService wishService)
+        private readonly ICategoryService _categoriesService;
+        public WishesController(IWishService wishService, ICategoryService categoriesService)
         {
             _wishService = wishService;
+            _categoriesService = categoriesService;
         }
 
         public async Task<IActionResult> ActiveWishesHandler()
@@ -25,9 +28,10 @@ namespace WishComeTrue.Controllers
             return Json(new { response.Data });
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            return View();
+            var response = await _categoriesService.GetCategories();
+            return View(response.Data);
         }
 
         

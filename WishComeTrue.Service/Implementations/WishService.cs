@@ -10,6 +10,7 @@ using WishComeTrue.Common.Constants;
 using WishComeTrue.Common.ViewModels.Wish;
 using WishComeTrue.DAL.Interfaces;
 using WishComeTrue.Service.Interfaces;
+using System.Data.Entity;
 
 namespace WishComeTrue.Service.Implementations
 {
@@ -51,9 +52,14 @@ namespace WishComeTrue.Service.Implementations
                      Name = x.Name,
                      Description = x.Description,
                      Link = x.Link,
+                     CategoryId = x.CategoryId,
+                     Category = x.Category,
                      Created = x.Created,
                      FulFilled = x.FulFilled,
                  });
+
+                var lst = resultWishes.ToList();
+
 
                 return new BaseResponse<IEnumerable<WishViewModel>>()
                 {
@@ -72,9 +78,9 @@ namespace WishComeTrue.Service.Implementations
             }
         }
 
-        public WishEntity GetWishById(string id)
+        public WishEntity GetWishById(string wishId)
         {
-            return _wishesRepository.GetById(id);
+            return _wishesRepository.GetById(wishId);
         }
 
         public async Task<IBaseResponse<WishEntity>> Create(WishViewModel model)
@@ -129,6 +135,7 @@ namespace WishComeTrue.Service.Implementations
                 wish.Name = model.Name;
                 wish.Description = model.Description;
                 wish.Link = model.Link;
+                wish.CategoryId = model.CategoryId;
                 wish.FulFilled = model.FulFilled;
                 await _wishesRepository.Update(wish);
 

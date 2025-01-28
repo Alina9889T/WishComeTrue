@@ -1,6 +1,10 @@
-﻿@{
+﻿@using WishComeTrue.Common.ViewModels.Category;
+@model IEnumerable<CategoryViewModel>;
+
+@{
     ViewData["Title"] = "Wishes Page";
 }
+
 <style>
     .wishes-container {
         display: flex;
@@ -52,6 +56,8 @@
                         <th>Name</th>
                         <th>Description</th>
                         <th>Link</th>
+                        <th>CategoryId</th>
+                        <th>Category</th>
                         <th>Created</th>
                         <th>FulFilled</th>
                         <th>Is FulFilled?</th>
@@ -77,6 +83,8 @@
                         <th>Name</th>
                         <th>Description</th>
                         <th>Link</th>
+                        <th>CategoryId</th>
+                        <th>Category</th>
                         <th>Created</th>
                         <th>FulFilled</th>
                         <th>Is FulFilled?</th>
@@ -122,6 +130,19 @@
                             </div>
                             <a id="wishLink" href="" target="_blank"></a>
                             <input class="col-10 mb-1 small" id="wishLinkInput" style="display: none" />
+                        </div>
+                        <div class="list-group-item py-3 lh-tight" aria-current="true">
+                            <div class="d-flex w-100 align-items-center justify-content-between">
+                                <strong class="mb-1">Category</strong>
+                                <i class="bi bi-tag"></i>
+                            </div>
+                            <div class="col-10 mb-1 small" id="wishCategory">Category</div>
+                            <select class="col-10 mb-1 small" id="wishCategorySelect">
+                                @foreach (var item in Model)
+                                {
+                                    <option value=@item.Id>@item.Name</option>
+                                }
+                            </select>
                         </div>
                         <div class="list-group-item py-3 lh-tight" aria-current="true">
                             <div class="d-flex w-100 align-items-center justify-content-between">
@@ -190,7 +211,7 @@
 
             ajax: {
                 url: "@Url.Action("ActiveWishesHandler")",
-                method: 'POST',
+                method: 'GET',
                 data: null
             },
 
@@ -199,6 +220,8 @@
                 { data: 'name'},
                 { data: 'description' },
                 { data: 'link', visible: false },
+                { data: 'categoryId', visible: false },
+                { data: 'categoryString' },
                 { data: 'createdString' },
                 { data: 'fulFilled', visible: false },
                 { data: 'fulFilledString' },
@@ -226,7 +249,7 @@
 
             ajax: {
                 url: "@Url.Action("FulFilledWishesHandler")",
-                method: 'POST',
+                method: 'GET',
                 data: null
             },
 
@@ -235,6 +258,8 @@
                 { data: 'name' },
                 { data: 'description' },
                 { data: 'link', visible: false },
+                { data: 'categoryId', visible: false },
+                { data: 'categoryString' },
                 { data: 'createdString' },
                 { data: 'fulFilled', visible: false },
                 { data: 'fulFilledString' },
@@ -292,6 +317,11 @@
             $('#wishLink').attr("href", data.link);
             $('#wishLinkInput').val(data.link);
 
+            $('#wishCategory').css('display', 'block');
+            $('#wishCategorySelect').css('display', 'none');
+            $('#wishCategory').text(data.categoryString);
+            $('#wishCategorySelect').val(data.categoryId);
+
             $('#wishCreated').text(data.createdString);
 
             $('#wishFulFilled').css('display', 'block');
@@ -319,6 +349,9 @@
             $('#wishLink').css('display', 'none');
             $('#wishLinkInput').css('display', 'block');
 
+            $('#wishCategory').css('display', 'none');
+            $('#wishCategorySelect').css('display', 'block');
+
             $('#wishFulFilled').css('display', 'none');
             $('#wishFulFilledSelect').css('display', 'block');
 
@@ -336,6 +369,7 @@
                     id: $('#wishId').text(),
                     name: $('#wishNameInput').val(),
                     description: $('#wishDescriptionInput').val(),
+                    categoryId: $('#wishCategorySelect').val(),
                     link: $('#wishLinkInput').val(),
                     fulFilled: $('#wishFulFilledSelect').val() == 1,
                 }),

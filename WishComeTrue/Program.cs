@@ -13,6 +13,8 @@ builder.Services.AddControllersWithViews().AddRazorRuntimeCompilation();
 
 builder.Services.AddScoped<IBaseRepository<WishEntity>, WishesRepository>();
 builder.Services.AddScoped<IWishService, WishService>();
+builder.Services.AddScoped<IBaseRepository<CategoryEntity>, CategoriesRepository>();
+builder.Services.AddScoped<ICategoryService, CategoryService>();
 
 var connectionString = builder.Configuration.GetConnectionString("MSSQL");
 builder.Services.AddDbContext<AppDBContext>(options =>

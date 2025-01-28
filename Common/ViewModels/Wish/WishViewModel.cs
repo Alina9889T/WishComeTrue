@@ -5,6 +5,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WishComeTrue.Common.Entity;
 
 namespace WishComeTrue.Common.ViewModels.Wish
 {
@@ -21,11 +22,19 @@ namespace WishComeTrue.Common.ViewModels.Wish
         [Display(Name = "Link")]
         public string Link { get; set; }
 
+
+        public int? CategoryId { get; set; }
+        public CategoryEntity? Category { get; set; }
+
+        public string CategoryString { get { return Category != null ? Category.Name : string.Empty; } }
+
+
         [Display(Name = "Created")]
         [DataType(DataType.Date)]
         public DateTime Created { get; set; }
 
         public string CreatedString { get { return Created.Date.ToString("dd.MM.yyyy"); } }
+
 
         [Display(Name = "FulFilled")]
         public bool FulFilled { get; set; }

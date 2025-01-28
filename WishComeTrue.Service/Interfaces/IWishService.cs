@@ -13,7 +13,7 @@ namespace WishComeTrue.Service.Interfaces
     {
         Task<IBaseResponse<IEnumerable<WishViewModel>>> GetWishes(bool recent = false, bool onlyActive = false, bool onlyFulFilled = false);
 
-        public WishEntity GetWishById(string id);
+        public WishEntity GetWishById(string wishId);
 
         Task<IBaseResponse<WishEntity>> Create(WishViewModel model);
 
